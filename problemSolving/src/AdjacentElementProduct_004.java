@@ -22,9 +22,9 @@ public class AdjacentElementProduct_004 {
         System.out.println("largest product is: " + solution(inputArray));
     }
     static int solution(int[] inputArray) {
-        int largestProduct = -1000;
-        for(int i = 1; i < inputArray.length; i++){
-            int product = inputArray[i-1] * inputArray[i];
+        int largestProduct = inputArray[0] * inputArray[1];
+        for(int i = 1; i < inputArray.length-1; i++){
+            int product = inputArray[i] * inputArray[i+1];
             if(product > largestProduct) {
                 largestProduct = product;
             }
@@ -51,3 +51,9 @@ public class AdjacentElementProduct_004 {
 // inputArray: [3, 4]
 // inputArray: [-1000, 4, 5, 8, 100, 50, 500]
 // inputArray: [-1000, -1000, 1, 1, 1, 5, 8, 100, 50, 500]
+
+    // OTHER APPROACH TO SOLVE THE PROBLEM
+/*1. int solution(int[] inputArray) {
+        return IntStream.range(1, inputArray.length)
+                .map(i->inputArray[i]*inputArray[i-1])
+                .max().getAsInt(); }*/
