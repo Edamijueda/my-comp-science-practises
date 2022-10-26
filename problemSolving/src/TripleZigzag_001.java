@@ -12,6 +12,7 @@ public class TripleZigzag_001 {
     public static void main(String[] args) {
         int[] numbers = new int[]{1, 2, 3, 4};
         System.out.println("contained Zigzag is: " + Arrays.toString(isZigzag(numbers)));
+
     }
     private static int[] isZigzag(int[] numbers) {
         int[] result = new int[numbers.length-2];
