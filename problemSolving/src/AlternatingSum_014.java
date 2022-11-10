@@ -31,7 +31,7 @@ public class AlternatingSum_014 {
         int[] input = {50, 60, 60, 45, 70}; // refer to TEST CASES for more input
         System.out.println("Output is: " + Arrays.toString(solution(input)));
     }
-    private static int[] solution(int[] input) {int[] outPut = new int[2];
+    /*private static int[] solution(int[] input) {int[] outPut = new int[2];
         int team1 = 0;
         int team2 = 0;
 
@@ -42,7 +42,7 @@ public class AlternatingSum_014 {
         outPut[0] = team1;
         outPut[1] = team2;
         return outPut;
-    }
+    }*/
 
     /*private static int[] solution(int[] input) { // Another approach with few lines of code
         int[] outPut = new int[2];
@@ -51,6 +51,26 @@ public class AlternatingSum_014 {
         }
         return outPut;
     }*/
+
+    /*private static int[] solution(int[] input) { // Solved using boolean
+
+        int[] output = {0, 0};
+
+        boolean isFirstTeam = true;
+        for (int index : input) {
+            output[isFirstTeam ? 0 : 1] += index;
+            isFirstTeam = !isFirstTeam;
+        }
+        return output;
+    }*/
+
+    private static int[] solution(int[] a) { // solved using bitwise AND operator "&"
+        int[] s = new int[2];
+        for(int i = 0;i < a.length;i++){
+            s[i&1] += a[i];
+        }
+        return s;
+    }
 }
 
 // TEST CASES
